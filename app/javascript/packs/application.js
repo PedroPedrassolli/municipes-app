@@ -11,8 +11,6 @@ import 'jquery'
 import 'popper.js'
 import 'bootstrap'
 
-import bootstrap
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
