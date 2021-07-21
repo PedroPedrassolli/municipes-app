@@ -1,5 +1,5 @@
 class MunicipesController < ApplicationController
-  before_action :set_municipe, only: [:show, :edit, :update]
+  before_action :set_municipe, only: %i[show edit update]
 
   def index
     @municipes = Municipe.all
@@ -18,7 +18,7 @@ class MunicipesController < ApplicationController
     end
   end
 
-	def update
+  def update
     if @municipe.update(municipe_params)
       redirect_to edit_municipe_path(@municipe)
     else
@@ -26,8 +26,9 @@ class MunicipesController < ApplicationController
     end
   end
 
-	def show;end
-  def edit;end
+  def show; end
+
+  def edit; end
 
   private
 
