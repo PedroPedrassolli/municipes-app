@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Municipes App</title>
+    <title><%= I18n.t("global.title")  %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <%= render partial: "public/navbar"%>
+    <%= render partial: "shared/navbar"%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

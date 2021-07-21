@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordered table-hover">
+	<thead>
+		<tr>
+			<th><%= I18n.t("activerecord.attributes.municipe.name")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.cpf")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.cns")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.email")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.birthdate")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.phone")  %></th>
+			<th><%= I18n.t("activerecord.attributes.municipe.status.one")  %></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @municipes.each do |municipe| %>
+		<tr>
+			<td><%= municipe.name %></td>
+			<td><%= municipe.cpf %></td>
+			<td><%= municipe.cns %></td>
+			<td><%= municipe.email %></td>
+			<td><%= municipe.birthdate %></td>
+			<td><%= municipe.phone %></td>
+			<td><%= municipe.status %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

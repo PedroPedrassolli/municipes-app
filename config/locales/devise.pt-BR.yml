@@ -44,6 +44,7 @@ pt-BR:
       signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para seu endereço de email. Por favor, siga o link para ativar sua conta."
       update_needs_confirmation: "Você atualizou sua conta com sucesso, mas nós precisamos verificar seu endereço de email. Por favor, cheque sua caixa de entrada e siga o link recebido."
       updated: "Sua conta foi atualizada com sucesso."
+      updated_but_not_signed_in: "Sua conta foi atualizada, mas já que trocou sua senha, precisamos que faça login novamente."
     sessions:
       signed_in: "Logado com sucesso."
       signed_out: "Saiu com sucesso."
