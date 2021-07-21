@@ -33,7 +33,7 @@ class MunicipesController < ApplicationController
   private
 
   def set_municipe
-    @municipe = Municipe.find(params[:id])
+    @municipe = Municipe.find_or_initialize_by(id: params[:id])
   end
 
   def municipe_params
