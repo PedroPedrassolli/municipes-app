@@ -2,7 +2,7 @@ class MunicipesController < ApplicationController
   before_action :set_municipe, only: %i[show edit update]
 
   def index
-    @municipes = Municipe.all
+    @municipes = Municipe.all.decorate
   end
 
   def new
@@ -37,7 +37,7 @@ class MunicipesController < ApplicationController
   private
 
   def set_municipe
-    @municipe = Municipe.find_or_initialize_by(id: params[:id])
+    @municipe = Municipe.find_or_initialize_by(id: params[:id]).decorate
   end
 
   def municipe_params

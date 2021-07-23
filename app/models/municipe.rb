@@ -9,7 +9,7 @@ class Municipe < ApplicationRecord
   validates :cns, length: { is: 15 }
   validates :cpf, :cns, numericality: { only_integer: true }
   validates :phone, length: { is: 11 }
-  validate :valid_phone, if: :phone
+  validates :phone, phone: true
   validates_format_of :email, with: Devise.email_regexp
 
   validates :cpf, :email, :phone, :cns, uniqueness: true
@@ -18,10 +18,6 @@ class Municipe < ApplicationRecord
 
     def valid_cpf
       errors.add(:cpf, I18n.t('errors.messages.invalid')) unless CPF.valid?(self.cpf)
-    end
-
-    def valid_phone
-      errors.add(:phone, I18n.t('errors.messages.invalid')) unless Phonelib.valid_for_country? self.phone, :br
     end
 
     def birthdate_data_range
