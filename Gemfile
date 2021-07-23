@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
+#PhoneLib
+gem 'phonelib', '0.6.51'
+# CPF/CNPJ
+gem 'cpf_cnpj', '0.5.0'
 # Devise
 gem 'devise', '4.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
