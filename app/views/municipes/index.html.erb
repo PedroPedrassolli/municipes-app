@@ -8,6 +8,7 @@
 			<th><%= I18n.t("activerecord.attributes.municipe.birthdate")  %></th>
 			<th><%= I18n.t("activerecord.attributes.municipe.phone")  %></th>
 			<th><%= I18n.t("activerecord.attributes.municipe.status.one")  %></th>
+			<th><%= I18n.t("titles.actions.one")  %></th>
 		</tr>
 	</thead>
 
@@ -21,6 +22,7 @@
 			<td><%= municipe.birthdate %></td>
 			<td><%= municipe.phone %></td>
 			<td><%= municipe.status %></td>
+			<td><%= link_to edit_municipe_path(municipe) %></td>
 		</tr>
 		<% end %>
 	</tbody>

@@ -27,6 +27,10 @@ pt-BR:
     navbar:
       list: "Listagem"
       add: "Adicionar"
+  titles:
+    actions:
+      one: "Ações"
+      edit: "Editar"
   global:
     title:
       "Municipes App"
@@ -129,6 +133,8 @@ pt-BR:
       day: Dia
       month: Mês
       year: Ano
+  messages:
+    saved: "Municipe salvo com sucesso!"
   errors:
     format: "%{attribute} %{message}"
     messages:
