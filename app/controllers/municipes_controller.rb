@@ -12,21 +12,17 @@ class MunicipesController < ApplicationController
   def create
     @municipe = Municipe.new(municipe_params)
     if @municipe.save
-      flash[:success] = I18n.t('messages.saved')
-      redirect_to municipe_path(@municipe)
+      saved_or_updated
     else
-      flash[:danger] = @municipe.errors.full_messages.to_sentence
-      redirect_to new_municipe_path(@municipe)
+      failed('new')
     end
   end
 
   def update
     if @municipe.update(municipe_params)
-      flash[:success] = I18n.t('messages.saved')
-      redirect_to municipe_path(@municipe)
+      saved_or_updated
     else
-      flash[:danger] = @municipe.errors.full_messages.to_sentence
-      redirect_to edit_municipe_path(@municipe)
+      failed('edit')
     end
   end
 
@@ -37,7 +33,17 @@ class MunicipesController < ApplicationController
   private
 
   def set_municipe
-    @municipe = Municipe.find_or_initialize_by(id: params[:id]).decorate
+    @municipe = Municipe.find_or_initialize_by(id: params[:id])
+  end
+
+  def saved_or_updated
+    flash.now[:success] = I18n.t('messages.saved')
+    redirect_to municipe_path(@municipe)
+  end
+
+  def failed(action)
+    flash.now[:danger] = @municipe.errors.full_messages.to_sentence
+    render action
   end
 
   def municipe_params
