@@ -14,8 +14,10 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <% if current_user %>
+          <%= link_to I18n.t('titles.actions.edit'), edit_user_registration_path, class: "btn btn-outline-primary" %>
+          <%= link_to I18n.t('titles.actions.exit'), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+        <% end %>
       </form>
     </div>
   </div>

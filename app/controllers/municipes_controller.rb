@@ -37,8 +37,8 @@ class MunicipesController < ApplicationController
   end
 
   def saved_or_updated
-    flash.now[:success] = I18n.t('messages.saved')
-    redirect_to municipe_path(@municipe)
+    flash[:success] = I18n.t('messages.saved')
+    redirect_to municipes_path
   end
 
   def failed(action)

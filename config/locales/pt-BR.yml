@@ -10,6 +10,9 @@ pt-BR:
       municipe:
         one: "Cidadão"
         other: "Cidadões"
+      user:
+        one: "Usuário"
+        other: "Usuários"
     attributes:
       municipe:
         name: "Nome completo"
@@ -23,6 +26,12 @@ pt-BR:
           one: "Estado"
           active: "Ativo"
           inactive: "Inativo"
+      user:
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação da senha"
+        current_password: "Senha atual"
+        character_minimum: "Mínimo de caractéres"
   static_pages:
     navbar:
       list: "Listagem"
@@ -31,6 +40,14 @@ pt-BR:
     actions:
       one: "Ações"
       edit: "Editar"
+      save: "Salvar"
+      enter: "Entrar"
+      create: "Criar"
+      register: "Registrar"
+      remember_me: "Lembrar de mim"
+      login: "Fazer login"
+      back: "Voltar"
+      exit: "Sair"
   global:
     title:
       "Municipes App"

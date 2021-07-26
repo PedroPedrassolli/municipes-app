@@ -1,16 +1,17 @@
 class Municipe < ApplicationRecord
   has_one_attached :photo
 
-  validates :name, :cpf, :cns, :email, :birthdate, :phone, :photo, :status, presence: true
-  validates :name, format: { with: /([\w\-\']{2,})([\s]+)([\w\-\']{2,})/ }
+  validates :name, :cpf, :cns, :email, :birthdate, :phone, :photo, presence: true
+  validates :status, inclusion: { in: [ true, false ] }
+  validates :name, format: { with: /([\w\-\']{2,})([\s]+)([\w\-\']{2,})/ }, if: :name
   validates :cpf, length: { is: 11 }
   validate :valid_cpf, if: :cpf
   validate :birthdate_data_range, if: :birthdate
   validates :cns, length: { is: 15 }
   validates :cpf, :cns, numericality: { only_integer: true }
   validates :phone, length: { is: 11 }
-  validates :phone, phone: true
-  validates_format_of :email, with: Devise.email_regexp
+  validates :phone, phone: true, if: :phone
+  validates_format_of :email, with: Devise.email_regexp, if: :email
 
   validates :cpf, :email, :phone, :cns, uniqueness: true
 
