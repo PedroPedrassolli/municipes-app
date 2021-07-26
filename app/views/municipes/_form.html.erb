@@ -40,7 +40,7 @@
 				<%= f.select(:status, [[I18n.t('activerecord.attributes.municipe.status.active'), true], [I18n.t('activerecord.attributes.municipe.status.inactive'), false]], {}, { class: 'form-select' }) %>
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="col">
 			<%= f.submit I18n.t('titles.actions.create'), class: "btn btn-default btn-primary" %>
 		</div>
 	</div>
