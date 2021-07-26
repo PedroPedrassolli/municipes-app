@@ -1,13 +1,13 @@
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="container>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <div class="form-group">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <div class="container">
+    <div class="col">
       <%= f.label :email, I18n.t('activerecord.attributes.user.email') %><br />
       <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="col">
       <%= f.label :password %>
         <i>
           <% if @minimum_password_length %>
@@ -19,19 +19,19 @@
       <%= f.password_field :password, class: "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="col">
       <%= f.label :password_confirmation, I18n.t('activerecord.attributes.user.password_confirmation') %><br />
       <%= f.password_field :password_confirmation, class: "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="col">
       <%= f.label :current_password, I18n.t('activerecord.attributes.user.current_password') %><br />
       <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="col">
       <%= f.submit I18n.t('titles.actions.save'), class: "btn btn-default btn-primary" %>
     </div>
     <%= link_to I18n.t('titles.actions.back'), :back %>
-  <% end %>
-</div>
+  </div>
+<% end %>
