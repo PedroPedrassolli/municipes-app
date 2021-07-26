@@ -5,7 +5,7 @@ ruby '3.0.1'
 
 # Draper
 gem 'draper', '4.0.0'
-#PhoneLib
+# PhoneLib
 gem 'phonelib', '0.6.51'
 # CPF/CNPJ
 gem 'cpf_cnpj', '0.5.0'

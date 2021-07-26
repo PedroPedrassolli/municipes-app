@@ -2,8 +2,8 @@ class Municipe < ApplicationRecord
   has_one_attached :photo
 
   validates :name, :cpf, :cns, :email, :birthdate, :phone, :photo, presence: true
-  validates :status, inclusion: { in: [ true, false ] }
-  validates :name, format: { with: /([\w\-\']{2,})([\s]+)([\w\-\']{2,})/ }, if: :name
+  validates :status, inclusion: { in: [true, false] }
+  validates :name, format: { with: /([\w\-']{2,})(\s+)([\w\-']{2,})/ }, if: :name
   validates :cpf, length: { is: 11 }
   validate :valid_cpf, if: :cpf
   validate :birthdate_data_range, if: :birthdate
@@ -17,11 +17,14 @@ class Municipe < ApplicationRecord
 
   private
 
-    def valid_cpf
-      errors.add(:cpf, I18n.t('errors.messages.invalid')) unless CPF.valid?(self.cpf)
-    end
+  def valid_cpf
+    errors.add(:cpf, I18n.t('errors.messages.invalid')) unless CPF.valid?(cpf)
+  end
 
-    def birthdate_data_range
-      errors.add(:birthdate, I18n.t('errors.messages.invalid')) unless ((100.years.ago)..(1.day.ago)).include?(self.birthdate)
+  def birthdate_data_range
+    unless ((100.years.ago)..(1.day.ago)).include?(birthdate)
+      errors.add(:birthdate,
+                 I18n.t('errors.messages.invalid'))
     end
+  end
 end

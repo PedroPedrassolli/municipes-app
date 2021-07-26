@@ -6,7 +6,7 @@ class MunicipeDecorator < Draper::Decorator
   end
 
   def birthdate
-    object.birthdate.strftime("%d/%m/%Y")
+    object.birthdate.strftime('%d/%m/%Y')
   end
 
   def status

@@ -26,7 +26,7 @@ module MunicipesApp
 
     config.i18n.default_locale = :"pt-BR"
 
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag.html_safe }
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag.html_safe }
 
     # Configuration for the application, engines, and railties goes here.
     #
