@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Municipe < ApplicationRecord
   has_one_attached :photo
 

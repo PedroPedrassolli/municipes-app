@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MunicipesController < ApplicationController
   before_action :set_municipe, only: %i[show edit update]
 
