@@ -16,20 +16,6 @@ pt-BR:
       timeout: "Sua sessão expirou. Por favor, faça login novamente para continuar."
       unauthenticated: "Você precisa entrar ou registrar-se antes de continuar."
       unconfirmed: "Você precisa confirmar seu endereço de email antes de continuar."
-    mailer:
-      confirmation_instructions:
-        subject: "Instruções de confirmação"
-      reset_password_instructions:
-        subject: "Instruções de redefinição de senha"
-      unlock_instructions:
-        subject: "Instruções de desbloqueio"
-      email_changed:
-        subject: "Email alterado"
-      password_change:
-        subject: "Senha alterada"
-    omniauth_callbacks:
-      failure: "Não foi possível autenticá-lo em %{kind} porque \"%{reason}\"."
-      success: "Autenticado com sucesso em %{kind}."
     passwords:
       no_token: "Você não pode acessar esta página para redefinição, por favor tenha certeza de que usou a URL completa recebida."
       send_instructions: "Você receberá, em breve, um email com instruções de como redefinir sua senha."
