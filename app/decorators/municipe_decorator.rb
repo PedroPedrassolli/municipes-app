@@ -8,7 +8,7 @@ class MunicipeDecorator < Draper::Decorator
   end
 
   def birthdate
-    object.birthdate.strftime('%d/%m/%Y')
+    I18n.l object.birthdate
   end
 
   def status
