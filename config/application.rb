@@ -27,6 +27,8 @@ module MunicipesApp
     config.load_defaults 6.1
 
     config.i18n.default_locale = :"pt-BR"
+    config.i18n.available_locales = [:"pt-BR", :en]
+    config.i18n.fallbacks = [:"pt-BR", :en]
 
     config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag.html_safe }
 
