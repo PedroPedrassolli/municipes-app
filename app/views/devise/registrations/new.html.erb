@@ -1,0 +1,29 @@
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="container">
+    <div class="col">
+      <%= f.label :email, I18n.t('activerecord.attributes.user.email') %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= f.label :password %>
+        <i>
+          (
+          <% if @minimum_password_length %>
+            <%= I18n.t('activerecord.attributes.user.character_minimum')%>: <%= @minimum_password_length %>
+          <% end %>
+          )
+        </i>
+      <br />
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= f.submit I18n.t('titles.actions.register'), class: "btn btn-default btn-primary" %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>

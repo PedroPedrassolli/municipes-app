@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><%= I18n.t("activerecord.models.municipe.other")  %></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/municipes"><%= I18n.t("static_pages.navbar.list")  %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/municipes/new"><%= I18n.t("static_pages.navbar.add")  %></a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <% if current_user %>
+          <%= link_to I18n.t('titles.actions.edit'), edit_user_registration_path, class: "btn btn-outline-primary" %>
+          <%= link_to I18n.t('titles.actions.exit'), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</nav>

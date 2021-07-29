@@ -1,0 +1,47 @@
+<%= form_for @municipe do |f| %>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<%= f.label :name, I18n.t('activerecord.attributes.municipe.name'), class: "control-label" %>
+				<%= f.text_field :name, class: "form-control" %>
+			</div>
+			<div class="col">
+				<%= f.label :phone, I18n.t('activerecord.attributes.municipe.phone'), class: "control-label" %>
+				<%= f.text_field :phone, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<%= f.label :email, I18n.t('activerecord.attributes.municipe.email'), class: "control-label" %>
+				<%= f.text_field :email, class: "form-control" %>
+			</div>
+			<div class="col">
+				<%= f.label :birthdate, I18n.t('activerecord.attributes.municipe.birthdate'), class: "control-label" %>
+				<%= f.date_field :birthdate, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<%= f.label :cpf, I18n.t('activerecord.attributes.municipe.cpf'), class: "control-label" %>
+				<%= f.text_field :cpf, class: "form-control" %>
+			</div>
+			<div class="col">
+				<%= f.label :cns, I18n.t('activerecord.attributes.municipe.cns'), class: "control-label" %>
+				<%= f.text_field :cns, class: "form-control" %>
+			</div>
+		</div>
+		<div class="row form-group">
+			<div class="col">
+				<%= f.label :photo, I18n.t('activerecord.attributes.municipe.photo'), class: "control-label" %>
+				<%= f.file_field :photo, class: "form-control" %>
+			</div>
+			<div class="col">
+				<%= f.label :status, I18n.t('activerecord.attributes.municipe.status.one'), class: "control-label" %>
+				<%= f.select(:status, [[I18n.t('activerecord.attributes.municipe.status.active'), true], [I18n.t('activerecord.attributes.municipe.status.inactive'), false]], {}, { class: 'form-select' }) %>
+			</div>
+		</div>
+		<div class="col">
+			<%= f.submit I18n.t('titles.actions.save'), class: "btn btn-default btn-primary" %>
+		</div>
+	</div>
+<% end %>
