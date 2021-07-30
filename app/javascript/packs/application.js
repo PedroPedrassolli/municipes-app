@@ -12,6 +12,7 @@ import 'bootstrap'
 import 'popper.js'
 import 'inputmask'
 require('packs/form')
+require('packs/cep_search')
 
 Rails.start()
 Turbolinks.start()

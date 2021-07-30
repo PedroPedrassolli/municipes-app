@@ -30,7 +30,7 @@
 				<%= f.text_field :cns, class: "form-control" %>
 			</div>
 		</div>
-		<div class="row form-group">
+		<div class="row">
 			<div class="col">
 				<%= f.label :photo, I18n.t('activerecord.attributes.municipe.photo'), class: "control-label" %>
 				<%= f.file_field :photo, class: "form-control" %>
@@ -39,6 +39,11 @@
 				<%= f.label :status, I18n.t('activerecord.attributes.municipe.status.one'), class: "control-label" %>
 				<%= f.select(:status, [[I18n.t('activerecord.attributes.municipe.status.active'), true], [I18n.t('activerecord.attributes.municipe.status.inactive'), false]], {}, { class: 'form-select' }) %>
 			</div>
+		</div>
+		<div class="nested-fields">
+			<%= f.fields_for :endereco do |endereco_form| %>
+				<%= render "enderecos/form", f: endereco_form %>
+			<% end %>
 		</div>
 		<div class="col">
 			<%= f.submit I18n.t('titles.actions.save'), class: "btn btn-default btn-primary" %>
