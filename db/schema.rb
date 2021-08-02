@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2021_07_30_185723) do
   end
 
   create_table "enderecos", force: :cascade do |t|
-    t.string "zipcode"
-    t.integer "address"
-    t.integer "complement"
+    t.integer "zipcode"
+    t.string "address"
+    t.string "complement"
     t.string "neighborhood"
-    t.date "city"
-    t.integer "state"
-    t.boolean "ibge_code"
+    t.string "city"
+    t.string "state"
+    t.integer "ibge_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "municipe_id"
