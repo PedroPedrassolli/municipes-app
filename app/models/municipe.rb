@@ -24,7 +24,7 @@ class Municipe < ApplicationRecord
   end
 
   def birthdate_data_range
-    unless ((120.years.ago)..(1.day.ago)).include?(birthdate)
+    unless ((120.years.ago)..(1.day.ago)).cover?(birthdate)
       errors.add(:birthdate,
                  I18n.t('errors.messages.invalid'))
     end
