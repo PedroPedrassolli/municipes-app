@@ -2,6 +2,8 @@
 
 class Municipe < ApplicationRecord
   has_one_attached :photo
+  has_one :endereco
+  accepts_nested_attributes_for :endereco, allow_destroy: true
 
   validates :name, :cpf, :cns, :email, :birthdate, :phone, :photo, presence: true
   validates :status, inclusion: { in: [true, false] }
