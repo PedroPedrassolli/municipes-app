@@ -41,8 +41,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'simplecov', require: false, group: :test
 
 group :development, :test do
-  gem 'pry', '~> 0.13.1'
+  gem 'factory_bot_rails', '~> 6.2.0'
+  gem 'ffaker', '~> 2.18.0'
+  gem 'pry-rails'
+  gem 'rails-controller-testing', '~> 0.0.3'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'shoulda-matchers', '~> 5.0.0'
 end
 
 group :development do
